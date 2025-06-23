@@ -681,7 +681,7 @@ pre code {
   }
   
   .news-date {
-    width: 80px;          /* Ensure enough space for your date format */
+    width: 60px;          /* Ensure enough space for your date format */
     display: inline-block; 
     text-align: right;   /* Center the text horizontally */
     font-weight: bold;    /* Optional styling */
