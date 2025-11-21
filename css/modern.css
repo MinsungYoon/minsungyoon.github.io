@@ -112,6 +112,12 @@ header {
   /* added spacing below header */
 }
 
+.hero .container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
 .hero-content {
   flex: 1;
 }
@@ -501,9 +507,11 @@ footer {
 
   /* Hero Section */
   .hero {
-    flex-direction: column-reverse;
-    text-align: center;
     padding: 40px 0;
+  }
+
+  .hero .container {
+    flex-direction: column-reverse;
     gap: 32px;
   }
 
