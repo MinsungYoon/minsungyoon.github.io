@@ -522,12 +522,17 @@ footer {
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
   }
 
   .hero-text {
     margin-left: auto;
     margin-right: auto;
+    font-size: 1rem;
   }
 
   .social-links {
@@ -593,6 +598,11 @@ footer {
   /* Gallery Section */
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* General */
+  .section-title {
+    font-size: 1.75rem;
   }
 }
 
