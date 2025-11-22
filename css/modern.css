@@ -67,6 +67,11 @@ header {
   height: var(--header-height);
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
 }
 
 .navbar {
