@@ -372,12 +372,16 @@ section {
   display: flex;
   gap: 16px;
   margin-bottom: 20px;
-  align-items: baseline;
+  align-items: flex-start;
 }
 
 .award-icon {
   color: var(--primary-color);
   font-size: 1.2rem;
+  margin-top: 4px;
+  width: 30px;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 /* Pictures Grid */
