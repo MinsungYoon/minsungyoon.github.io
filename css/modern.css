@@ -702,3 +702,107 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Theme Modes */
+
+/* White Mode */
+body.white-mode {
+  background-image: none;
+  background-color: #ffffff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --text-color: #f9fafb;
+  --text-light: #d1d5db;
+  --bg-color: #111827;
+  --card-bg: rgba(31, 41, 55, 0.7);
+  --border-color: #374151;
+  --primary-color: #60a5fa;
+  /* Lighter blue for dark mode */
+  --secondary-color: #3b82f6;
+
+  background-image: none;
+  background-color: #111827;
+  color: var(--text-color);
+}
+
+body.dark-mode .hero-title,
+body.dark-mode .section-title,
+body.dark-mode .edu-degree,
+body.dark-mode .pub-title {
+  color: #f9fafb;
+}
+
+body.dark-mode .navbar,
+body.dark-mode header {
+  background-color: rgba(17, 24, 39, 0.9);
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .news-list,
+body.dark-mode .publication-card,
+body.dark-mode .gallery-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .social-btn {
+  background-color: #1f2937;
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .social-btn:hover {
+  background-color: #374151;
+}
+
+body.dark-mode .pub-image-container {
+  background-color: #1f2937;
+  border-color: var(--border-color);
+}
+
+body.dark-mode .news-link-btn,
+body.dark-mode .pub-link {
+  background-color: #374151;
+  color: var(--text-color);
+}
+
+body.dark-mode .news-link-btn:hover,
+body.dark-mode .pub-link:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+body.dark-mode footer {
+  background-color: #111827;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Toggle Button */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  margin-left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-main);
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
