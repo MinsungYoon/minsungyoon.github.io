@@ -216,6 +216,13 @@ section {
   border-radius: 2px;
 }
 
+.subsection-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
 /* News */
 .news-list {
   list-style: none;
@@ -543,6 +550,7 @@ footer {
   .navbar {
     flex-direction: column;
     gap: 8px;
+    align-items: center;
   }
 
   .navbar-brand {
@@ -679,9 +687,16 @@ footer {
   /* Theme Toggle Mobile */
   .theme-toggle-btn {
     margin-left: 0;
+    margin-right: 0;
     margin-top: 4px;
     font-size: 0.8rem;
     padding: 6px 12px;
+    align-self: center;
+  }
+
+  .subsection-title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
   }
 }
 
@@ -757,6 +772,7 @@ body.dark-mode {
 
 body.dark-mode .hero-title,
 body.dark-mode .section-title,
+body.dark-mode .subsection-title,
 body.dark-mode .edu-degree,
 body.dark-mode .pub-title {
   color: #f9fafb;
