@@ -63,7 +63,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
   height: var(--header-height);
   display: flex;
   align-items: center;
@@ -537,28 +537,36 @@ footer {
   /* Navbar */
   header {
     height: auto;
-    padding: 16px 0;
+    padding: 10px 0;
   }
 
   .navbar {
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
   }
 
   .navbar-brand {
     margin-right: 0;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
+    font-size: 1.1rem;
   }
 
   .navbar-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    justify-items: center;
+    gap: 12px;
+    row-gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
   }
 
   /* Hero Section */
   .hero {
-    padding: 40px 0;
+    padding: 30px 0;
   }
 
   .hero .container {
@@ -573,17 +581,20 @@ footer {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 12px;
   }
 
   .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
   }
 
   .hero-text {
     margin-left: auto;
     margin-right: auto;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
   }
 
   .social-links {
@@ -593,13 +604,11 @@ footer {
 
   /* Education Section */
   .education-item {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 12px;
   }
 
   .edu-icon {
-    margin-top: 0;
+    margin-top: 4px;
   }
 
   /* News Section */
@@ -637,9 +646,7 @@ footer {
 
   /* Awards Section */
   .award-item {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+    gap: 12px;
   }
 
   .award-icon {
@@ -652,8 +659,29 @@ footer {
   }
 
   /* General */
+  section {
+    padding: 30px 0;
+  }
+
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .pub-title {
+    font-size: 1.1rem;
+  }
+
+  .edu-degree {
+    font-size: 1rem;
+  }
+
+  /* Theme Toggle Mobile */
+  .theme-toggle-btn {
+    margin-left: 0;
+    margin-top: 4px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
 }
 
@@ -737,7 +765,7 @@ body.dark-mode .pub-title {
 body.dark-mode .navbar,
 body.dark-mode header {
   background-color: rgba(17, 24, 39, 0.9);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }
 
 body.dark-mode .news-list,
