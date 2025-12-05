@@ -539,7 +539,22 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
+  .hero .container {
+    gap: 40px;
+  }
+
+  .hero-image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .navbar-brand {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
 
   /* Navbar */
   header {
