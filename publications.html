@@ -160,7 +160,7 @@
                         <p class="pub-authors">Heechan Shin, <b>Minsung Yoon</b>, Jeil Jeong, and Sung-eui Yoon</p>
                         <p class="pub-venue">International Journal of Control, Automation, and Systems (IJCAS),
                             2025</p>
-                        <p class="pub-venue" style="margin-top: -10px; font-size: 0.9rem;">(Also presented at
+                        <p class="pub-venue pub-sub-venue">(Also presented at
                             International Conference on Control, Automation and Systems (ICCAS), 2025)</p>
                         <div class="pub-links">
                             <a href="http://dx.doi.org/10.1007/s12555-025-0525-4" class="pub-link">PAPER</a>
@@ -253,7 +253,7 @@
                         <p class="pub-authors"><b>Minsung Yoon</b>, Heechan Shin, Jeil Jeong, and Sung-Eui Yoon</p>
                         <p class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS),
                             2024</p>
-                        <p class="pub-venue" style="margin-top: -10px; font-size: 0.9rem;">(Also presented at Agile
+                        <p class="pub-venue pub-sub-venue">(Also presented at Agile
                             Robotics Workshop at ICRA 2024)</p>
                         <div class="pub-links">
                             <a href="https://sgvr.kaist.ac.kr/~msyoon/papers/IROS24/" class="pub-link">Project Page</a>
@@ -294,8 +294,7 @@
                             Path-following Problems of Redundant Manipulators</h3>
                         <p class="pub-authors"><b>Minsung Yoon</b>, Mincheul Kang, Daehyung Park, and Sung-Eui Yoon</p>
                         <p class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2023</p>
-                        <p style="color: #dc2626; font-weight: 600; margin-bottom: 12px;">🏆 Outstanding Planning Paper
-                            Award</p>
+                        <p class="pub-award">🏆 Outstanding Planning Paper Award</p>
                         <div class="pub-links">
                             <a href="http://sgvr.kaist.ac.kr/~msyoon/papers/ICRA23_RLITG/" class="pub-link">Project
                                 Page</a>
@@ -341,8 +340,7 @@
                         </p>
                         <p class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2022
                         </p>
-                        <p style="color: #dc2626; font-weight: 600; margin-bottom: 12px;">🏆 Outstanding Navigation
-                            Paper Finalist Award</p>
+                        <p class="pub-award">🏆 Outstanding Navigation Paper Finalist Award</p>
                         <div class="pub-links">
                             <a href="http://sgvr.kaist.ac.kr/~msyoon/papers/CBN-DRL/" class="pub-link">Project
                                 Page</a>
@@ -403,9 +401,7 @@
                 </div>
 
             </div>
-            <h3 class="subsection-title" style="margin-top: 48px;">Domestic
-                (Korean)
-                Papers</h3>
+            <h3 class="subsection-title">Domestic (Korean) Papers</h3>
             <div class="publication-list">
 
                 <!-- Paper KCC 2024 -->
@@ -506,106 +502,7 @@
         <img src="" alt="Expanded Image" />
     </div>
 
-    <script>
-        // Image Overlay
-        document.addEventListener("DOMContentLoaded", function () {
-            const overlay = document.getElementById("overlay");
-            const overlayImg = overlay.querySelector("img");
-            // Select both gallery images (if any) and publication images
-            const images = document.querySelectorAll(".gallery-img, .pub-image");
-
-            images.forEach((img) => {
-                img.addEventListener("click", function () {
-                    overlay.classList.remove("active");
-                    overlayImg.src = "";
-
-                    const tempImg = new Image();
-                    tempImg.src = this.src;
-
-                    tempImg.onload = () => {
-                        overlayImg.src = tempImg.src;
-                        overlay.classList.add("active");
-                    };
-                });
-            });
-
-            overlay.addEventListener("click", function () {
-                overlay.classList.remove("active");
-                setTimeout(() => {
-                    overlayImg.src = "";
-                }, 300); // Wait for transition
-            });
-        });
-
-        // Hide Header on Scroll
-        let lastScrollTop = 0;
-        const header = document.querySelector('header');
-        const headerHeight = header.offsetHeight;
-
-        window.addEventListener('scroll', function () {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
-                // Scrolling down
-                header.classList.add('header-hidden');
-            } else {
-                // Scrolling up
-                header.classList.remove('header-hidden');
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-        });
-
-        // Theme Toggle
-        const themeToggleBtn = document.getElementById('themeToggle');
-        const themeIcon = themeToggleBtn.querySelector('i');
-        const themeText = themeToggleBtn.querySelector('span');
-        const body = document.body;
-
-        // Order: Gradient -> Dark -> White
-        const themes = ['gradient', 'dark', 'white'];
-
-        // Load saved theme or default to gradient
-        let currentTheme = localStorage.getItem('themePreference') || 'gradient';
-        applyTheme(currentTheme);
-
-        themeToggleBtn.addEventListener('click', function () {
-            let currentIndex = themes.indexOf(currentTheme);
-            let nextIndex = (currentIndex + 1) % themes.length;
-            currentTheme = themes[nextIndex];
-            applyTheme(currentTheme);
-            localStorage.setItem('themePreference', currentTheme);
-        });
-
-        function applyTheme(theme) {
-            // Remove all theme classes
-            body.classList.remove('white-mode', 'dark-mode');
-
-            if (theme === 'white') {
-                body.classList.add('white-mode');
-            } else if (theme === 'dark') {
-                body.classList.add('dark-mode');
-            }
-            // 'gradient' is default
-
-            updateButton(theme);
-        }
-
-        function updateButton(currentTheme) {
-            let nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
-            let nextTheme = themes[nextThemeIndex];
-
-            if (nextTheme === 'gradient') {
-                themeText.textContent = 'Gradient Mode';
-                themeIcon.className = 'fas fa-palette';
-            } else if (nextTheme === 'dark') {
-                themeText.textContent = 'Dark Mode';
-                themeIcon.className = 'fas fa-moon';
-            } else if (nextTheme === 'white') {
-                themeText.textContent = 'White Mode';
-                themeIcon.className = 'fas fa-sun';
-            }
-        }
-    </script>
+    <script src="js/main.js" defer></script>
 </body>
 
 </html>

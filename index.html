@@ -100,8 +100,7 @@
             <div class="edu-institution">Korea Advanced Institute of Science and Technology (KAIST)</div>
             <div class="edu-period">Mar. 2022 - Current | Advisor: <a href="https://sgvr.kaist.ac.kr/~sungeui/">Sung-Eui
                 Yoon</a></div>
-            <div style="font-size: 0.9rem; color: var(--text-color); margin-top: 2px;">Total GPA: 4.1/4.3 (undergoing)
-            </div>
+            <div class="edu-gpa">Total GPA: 4.1/4.3 (undergoing)</div>
           </div>
         </li>
         <li class="education-item reveal">
@@ -111,8 +110,7 @@
             <div class="edu-institution">Korea Advanced Institute of Science and Technology (KAIST)</div>
             <div class="edu-period">Mar. 2020 - Feb. 2022 | Advisor: <a
                 href="https://sgvr.kaist.ac.kr/~sungeui/">Sung-Eui Yoon</a></div>
-            <div style="font-size: 0.9rem; color: var(--text-color); margin-top: 2px;">Total GPA: 4.0/4.3 (credits:
-              34)</div>
+            <div class="edu-gpa">Total GPA: 4.0/4.3 (credits: 34)</div>
           </div>
         </li>
         <li class="education-item reveal">
@@ -121,10 +119,7 @@
             <div class="edu-degree">B.S. in Information & Communication Engineering</div>
             <div class="edu-institution">Inha University</div>
             <div class="edu-period">Mar. 2015 - Feb. 2019</div>
-            <div style="font-size: 0.9rem; color: var(--text-color); margin-top: 2px;">
-              Major GPA: 4.48/4.5 (credits: 74), Total GPA: 4.34/4.5 (credits: 130) — Graduated <strong>Summa Cum
-                Laude</strong>
-            </div>
+            <div class="edu-gpa">Major GPA: 4.48/4.5 (credits: 74), Total GPA: 4.34/4.5 (credits: 130) — Graduated <strong>Summa Cum Laude</strong></div>
           </div>
         </li>
       </ul>
@@ -201,7 +196,7 @@
           </li>
           <li class="news-item">
             <span class="news-date">May 2023</span>
-            <span class="news-content">Received the <b style="color: #dc2626;">Outstanding Planning Paper Award</b> at
+            <span class="news-content">Received the <b class="award-highlight">Outstanding Planning Paper Award</b> at
               ICRA 2023.</span>
             <a href="https://www.ieee-ras.org/about-ras/latest-news/ras-congratulates-the-honorees-at-the-icra-2023-awards-ceremony"
               class="news-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i> Link</a>
@@ -229,8 +224,7 @@
           </li>
           <li class="news-item">
             <span class="news-date">May 2022</span>
-            <span class="news-content">Received the <b style="color: #dc2626;">Outstanding Navigation Paper Finalist
-                Award</b> at ICRA 2022.</span>
+            <span class="news-content">Received the <b class="award-highlight">Outstanding Navigation Paper Finalist Award</b> at ICRA 2022.</span>
             <a href="https://ewh.ieee.org/soc/ras/conf/fullysponsored/icra/2022/icra2022.org/program/awards.html"
               class="news-link-btn" target="_blank"><i class="fas fa-external-link-alt"></i> Link</a>
           </li>
@@ -326,7 +320,7 @@
               of Redundant Manipulators</h3>
             <p class="pub-authors"><b>Minsung Yoon</b>, Mincheul Kang, Daehyung Park, and Sung-Eui Yoon</p>
             <p class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2023</p>
-            <p style="color: #dc2626; font-weight: 600; margin-bottom: 12px;">🏆 Outstanding Planning Paper Award</p>
+            <p class="pub-award">🏆 Outstanding Planning Paper Award</p>
             <div class="pub-links">
               <a href="http://sgvr.kaist.ac.kr/~msyoon/papers/ICRA23_RLITG/" class="pub-link">Project Page</a>
             </div>
@@ -359,8 +353,7 @@
               Learning</h3>
             <p class="pub-authors">Hyeongyeol Ryu, <b>Minsung Yoon</b>, Daehyung Park, and Sung-Eui Yoon</p>
             <p class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA), 2022</p>
-            <p style="color: #dc2626; font-weight: 600; margin-bottom: 12px;">🏆 Outstanding Navigation Paper Finalist
-              Award</p>
+            <p class="pub-award">🏆 Outstanding Navigation Paper Finalist Award</p>
             <div class="pub-links">
               <a href="http://sgvr.kaist.ac.kr/~msyoon/papers/CBN-DRL/" class="pub-link">Project Page</a>
             </div>
@@ -466,7 +459,7 @@
       </div>
 
       <!-- Hidden Pictures -->
-      <div id="morePictures" style="display: none; margin-top: 24px;">
+      <div id="morePictures" style="display: none;">
         <div class="gallery-grid">
           <div class="gallery-item reveal">
             <img src="resources/pictures/kroc25_tutorial_MS.png" alt="KRoC25" class="gallery-img">
@@ -561,159 +554,7 @@
     <img src="" alt="Expanded Image" />
   </div>
 
-  <script>
-    // News Toggle
-    document.getElementById('loadMoreNews').addEventListener('click', function () {
-      var additionalContent = document.getElementById('moreNews');
-      var btn = this;
-
-      if (additionalContent.style.display === 'none') {
-        additionalContent.style.display = 'block';
-        btn.innerHTML = '<i class="fas fa-chevron-circle-up"></i> Close';
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
-        additionalContent.style.display = 'none';
-        btn.innerHTML = '<i class="fas fa-chevron-circle-down"></i> More News';
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Pictures Toggle
-    document.getElementById('loadMorePictures').addEventListener('click', function () {
-      var morePictures = document.getElementById('morePictures');
-      var btn = this;
-
-      if (morePictures.style.display === 'none') {
-        morePictures.style.display = 'block';
-        btn.innerHTML = '<i class="fas fa-chevron-circle-up"></i> Close';
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
-        morePictures.style.display = 'none';
-        btn.innerHTML = '<i class="fas fa-chevron-circle-down"></i> More Pictures';
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Image Overlay
-    document.addEventListener("DOMContentLoaded", function () {
-      const overlay = document.getElementById("overlay");
-      const overlayImg = overlay.querySelector("img");
-      const images = document.querySelectorAll(".gallery-img, .pub-image");
-
-      images.forEach((img) => {
-        img.addEventListener("click", function () {
-          overlay.classList.remove("active");
-          overlayImg.src = "";
-
-          const tempImg = new Image();
-          tempImg.src = this.src;
-
-          tempImg.onload = () => {
-            overlayImg.src = tempImg.src;
-            overlay.classList.add("active");
-          };
-        });
-      });
-
-      overlay.addEventListener("click", function () {
-        overlay.classList.remove("active");
-        setTimeout(() => {
-          overlayImg.src = "";
-        }, 300); // Wait for transition
-      });
-    });
-
-    // Scroll Reveal Animation
-    document.addEventListener('DOMContentLoaded', function () {
-      const reveals = document.querySelectorAll('.reveal');
-
-      const revealOnScroll = function () {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100;
-
-        reveals.forEach((reveal) => {
-          const elementTop = reveal.getBoundingClientRect().top;
-
-          if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add('active');
-          }
-        });
-      };
-
-      window.addEventListener('scroll', revealOnScroll);
-      // Trigger once on load
-      revealOnScroll();
-    });
-
-    // Hide Header on Scroll
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-    const headerHeight = header.offsetHeight;
-
-    window.addEventListener('scroll', function () {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
-        // Scrolling down
-        header.classList.add('header-hidden');
-      } else {
-        // Scrolling up
-        header.classList.remove('header-hidden');
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-    });
-
-    // Theme Toggle
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
-    const themeText = themeToggleBtn.querySelector('span');
-    const body = document.body;
-
-    // Order: Gradient -> Dark -> White
-    const themes = ['gradient', 'dark', 'white'];
-
-    // Load saved theme or default to gradient
-    let currentTheme = localStorage.getItem('themePreference') || 'gradient';
-    applyTheme(currentTheme);
-
-    themeToggleBtn.addEventListener('click', function () {
-      let currentIndex = themes.indexOf(currentTheme);
-      let nextIndex = (currentIndex + 1) % themes.length;
-      currentTheme = themes[nextIndex];
-      applyTheme(currentTheme);
-      localStorage.setItem('themePreference', currentTheme);
-    });
-
-    function applyTheme(theme) {
-      // Remove all theme classes
-      body.classList.remove('white-mode', 'dark-mode');
-
-      if (theme === 'white') {
-        body.classList.add('white-mode');
-      } else if (theme === 'dark') {
-        body.classList.add('dark-mode');
-      }
-      // 'gradient' is default
-
-      updateButton(theme);
-    }
-
-    function updateButton(currentTheme) {
-      let nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
-      let nextTheme = themes[nextThemeIndex];
-
-      if (nextTheme === 'gradient') {
-        themeText.textContent = 'Gradient Mode';
-        themeIcon.className = 'fas fa-palette';
-      } else if (nextTheme === 'dark') {
-        themeText.textContent = 'Dark Mode';
-        themeIcon.className = 'fas fa-moon';
-      } else if (nextTheme === 'white') {
-        themeText.textContent = 'White Mode';
-        themeIcon.className = 'fas fa-sun';
-      }
-    }
-  </script>
+  <script src="js/main.js" defer></script>
 
 </body>
 
