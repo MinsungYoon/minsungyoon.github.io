@@ -17,6 +17,26 @@
   padding: 0;
 }
 
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 18px;
+  z-index: 10000;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+  color: #fff;
+}
+
 body {
   font-family: var(--font-main);
   background-color: #f0f4f8;
@@ -238,6 +258,14 @@ section {
 
 .news-item:last-child {
   border-bottom: none;
+}
+
+.news-list .news-hidden {
+  display: none;
+}
+
+.news-list.show-hidden .news-hidden {
+  display: flex;
 }
 
 .news-date {
@@ -788,16 +816,30 @@ footer {
   transform: translateY(0);
 }
 
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Theme Modes */
 
 /* White Mode */
-body.white-mode {
+html.white-mode body {
   background-image: none;
   background-color: #ffffff;
 }
 
 /* Dark Mode */
-body.dark-mode {
+html.dark-mode body {
   --text-color: #f9fafb;
   --text-light: #d1d5db;
   --bg-color: #111827;
@@ -811,55 +853,55 @@ body.dark-mode {
   color: var(--text-color);
 }
 
-body.dark-mode .hero-title,
-body.dark-mode .section-title,
-body.dark-mode .subsection-title,
-body.dark-mode .edu-degree,
-body.dark-mode .pub-title {
+html.dark-mode body .hero-title,
+html.dark-mode body .section-title,
+html.dark-mode body .subsection-title,
+html.dark-mode body .edu-degree,
+html.dark-mode body .pub-title {
   color: #f9fafb;
 }
 
-body.dark-mode .navbar,
-body.dark-mode header {
+html.dark-mode body .navbar,
+html.dark-mode body header {
   background-color: rgba(17, 24, 39, 0.9);
   border-bottom: none;
 }
 
-body.dark-mode .news-list,
-body.dark-mode .publication-card,
-body.dark-mode .gallery-item {
+html.dark-mode body .news-list,
+html.dark-mode body .publication-card,
+html.dark-mode body .gallery-item {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
 }
 
-body.dark-mode .social-btn {
+html.dark-mode body .social-btn {
   background-color: #1f2937;
   border-color: var(--border-color);
   color: var(--text-color);
 }
 
-body.dark-mode .social-btn:hover {
+html.dark-mode body .social-btn:hover {
   background-color: #374151;
 }
 
-body.dark-mode .pub-image-container {
-  background-color: #1f2937;
+html.dark-mode body .pub-image-container {
+  background-color: #ffffff;
   border-color: var(--border-color);
 }
 
-body.dark-mode .news-link-btn,
-body.dark-mode .pub-link {
+html.dark-mode body .news-link-btn,
+html.dark-mode body .pub-link {
   background-color: #374151;
   color: var(--text-color);
 }
 
-body.dark-mode .news-link-btn:hover,
-body.dark-mode .pub-link:hover {
+html.dark-mode body .news-link-btn:hover,
+html.dark-mode body .pub-link:hover {
   background-color: var(--primary-color);
   color: white;
 }
 
-body.dark-mode footer {
+html.dark-mode body footer {
   background-color: #111827;
   border-top: 1px solid var(--border-color);
 }
@@ -888,6 +930,6 @@ body.dark-mode footer {
   border-color: var(--primary-color);
 }
 
-body.dark-mode .theme-toggle-btn:hover {
+html.dark-mode body .theme-toggle-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
