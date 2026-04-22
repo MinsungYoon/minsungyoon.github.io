@@ -54,8 +54,8 @@ if (reveals.length) {
 const themeToggleBtn = document.getElementById('themeToggle');
 const themeIcon = themeToggleBtn.querySelector('i');
 const themeText = themeToggleBtn.querySelector('span');
-const themes = ['gradient', 'dark', 'white'];
-let currentTheme = localStorage.getItem('themePreference') || 'gradient';
+const themes = ['dark', 'white', 'gradient'];
+let currentTheme = localStorage.getItem('themePreference') || 'dark';
 
 applyTheme(currentTheme);
 
