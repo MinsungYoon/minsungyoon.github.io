@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAPL — Phase-Aware Policy Learning for Skateboard Riding of Quadruped Robots</title>
+<meta name="description" content="Phase-Aware Policy Learning (PAPL): a reinforcement learning framework that enables quadruped robots to ride skateboards via FiLM-based phase-conditioned policy.">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="venue">Accepted to ICRA 2026</div>
+    <h1 class="title">
+      Phase-Aware Policy Learning for<br>
+      Skateboard Riding of Quadruped Robots
+    </h1>
+    <div class="subtitle-line">via Feature-wise Linear Modulation</div>
+
+    <div class="authors">
+      <span><a href="https://minsungyoon.github.io" target="_blank" rel="noopener">Minsung Yoon</a><sup>*</sup></span>
+      <span>Jeil Jeong<sup>*</sup></span>
+      <span><a href="http://sgvr.kaist.ac.kr/~sungeui/" target="_blank" rel="noopener">Sung-Eui Yoon</a><sup>†</sup></span>
+    </div>
+    <div class="affiliation">School of Computing, KAIST</div>
+    <div class="affiliation-note">
+      <sup>*</sup>Equal contribution &nbsp;·&nbsp; <sup>†</sup>Corresponding author
+    </div>
+
+    <nav class="links">
+      <a class="btn" href="https://arxiv.org/abs/2602.09370" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Paper (arXiv)
+      </a>
+      <a class="btn" href="https://youtu.be/bCNfdQ3RYKg" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Video
+      </a>
+      <a class="btn" href="#bibtex">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        BibTeX
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- TEASER -->
+<section class="teaser">
+  <div class="container">
+    <figure class="wide">
+      <img src="assets/images/teaser.png" alt="Unitree Go1 riding a skateboard with a belly-mounted RGB camera">
+      <figcaption>Unitree Go1 with a belly-mounted RGB camera for closed-loop skateboard riding.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ABSTRACT -->
+<section class="section">
+  <div class="container narrow">
+    <h2>Abstract</h2>
+    <p>
+      Controlling a skateboard with a legged robot is difficult due to perception-driven contact and multi-modal
+      objectives across riding phases. We propose <strong>Phase-Aware Policy Learning (PAPL)</strong>, an RL framework
+      that modulates actor and critic networks with phase-conditioned <strong>FiLM</strong> layers, yielding a unified
+      policy that captures phase-specific behavior while sharing robot-level knowledge. PAPL attains accurate
+      command-following in simulation and transfers zero-shot to hardware.
+    </p>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section alt">
+  <div class="container">
+    <h2>Method</h2>
+    <figure class="wide">
+      <img src="assets/images/framework.png" alt="PAPL framework overview">
+      <figcaption>
+        Asymmetric actor–critic trained with PPO, then distilled via DAgger into observation-history estimators for
+        partial-observability deployment.
+      </figcaption>
+    </figure>
+
+    <div class="two-col">
+      <figure>
+        <img src="assets/images/phase-clock.png" alt="Phase clock">
+        <figcaption>Phase clock &phi;<sub>t</sub>: Pushing, Transition, Carving.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/film-mlp.png" alt="FiLM-modulated MLP">
+        <figcaption>Per-layer FiLM modulation conditioned on &phi;<sub>t</sub>.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATION -->
+<section class="section">
+  <div class="container">
+    <h2>Simulation Experiments</h2>
+    <figure class="wide">
+      <div class="video-frame">
+        <video src="assets/videos/sim_all.mp4" controls autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <figcaption>Diverse simulation validation of PAPL — varied commands, rough terrains, and comparisons with other locomotion modalities.</figcaption>
+    </figure>
+
+    <figure class="wide">
+      <img src="assets/images/tracking.png" alt="Tracking error heatmaps and ablations">
+      <figcaption>
+        Tracking-error heatmaps and command-area curves. PAPL covers the broadest low-error region;
+        ablating FiLM, exteroception, or privileged learning each degrades performance.
+      </figcaption>
+    </figure>
+
+    <figure class="wide">
+      <img src="assets/images/power.png" alt="Power consumption">
+      <figcaption>Motor power over a 30&nbsp;m traversal — skateboarding consumes less energy than legged and wheel–legged baselines.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- REAL WORLD -->
+<section class="section alt">
+  <div class="container">
+    <h2>Real-World Experiments</h2>
+    <figure class="wide">
+      <img src="assets/images/real-world.png" alt="Real-world skateboarding demonstrations">
+      <figcaption>Zero-shot transfer across perturbations, low light, and uneven sidewalks.</figcaption>
+    </figure>
+
+    <div class="two-col">
+      <figure>
+        <div class="video-frame">
+          <video src="assets/videos/real_indoor.mp4" controls autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <figcaption>Indoor.</figcaption>
+      </figure>
+      <figure>
+        <div class="video-frame">
+          <video src="assets/videos/real_outdoor.mp4" controls autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <figcaption>Outdoor.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- BIBTEX -->
+<section id="bibtex" class="section">
+  <div class="container narrow">
+    <h2>BibTeX</h2>
+<pre><code>@misc{yoon2026phaseawarepolicylearningskateboard,
+  title         = {Phase-Aware Policy Learning for Skateboard Riding of
+                   Quadruped Robots via Feature-wise Linear Modulation},
+  author        = {Minsung Yoon and Jeil Jeong and Sung-Eui Yoon},
+  year          = {2026},
+  eprint        = {2602.09370},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2602.09370}
+}</code></pre>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="muted">
+      Supported by MSIT / IITP (RS-2025-25443318, RS-2023-00237965) and NRF (RS-2023-00208506).
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('img').forEach(img => img.setAttribute('loading', 'lazy'));
+</script>
+</body>
+</html>
